@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Menu>
@@ -84,5 +85,7 @@
                 <iconPacks:PackIconModern Width="40" Height="40" Kind="Settings" />
             </mah:Tile>
         </ItemsControl>
+
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center" Margin="0, 10" VerticalAlignment="Bottom">PROTÓTIPO, NÃO É O PRODUTO FINAL</TextBlock>
     </Grid>
 </themes:MetroShellWindow>
