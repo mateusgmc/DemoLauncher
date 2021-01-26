@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DryIoc;
+using Prism.DryIoc;
+using Prism.Ioc;
+using Prism.Modularity;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,7 +15,21 @@ namespace DSI.ModuleB
     /// <summary>
     /// Interação lógica para App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
+        protected override Window CreateShell()
+        {
+            return Container.Resolve<MainWindow>();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            // TODO: Registro de serviços e navegação aqui
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            // TODO: Registro de módulos aqui
+        }
     }
 }

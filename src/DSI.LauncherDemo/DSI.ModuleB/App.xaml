@@ -1,8 +1,9 @@
-﻿<Application x:Class="DSI.ModuleB.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:DSI.ModuleB"
-             StartupUri="MainWindow.xaml">
+﻿<prism:PrismApplication
+    xmlns:prism="http://prismlibrary.com/"
+    x:Class="DSI.ModuleB.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DSI.ModuleB">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -10,4 +11,4 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-</Application>
+</prism:PrismApplication>
