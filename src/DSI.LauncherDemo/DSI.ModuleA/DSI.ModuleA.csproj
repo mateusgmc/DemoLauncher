@@ -123,5 +123,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSI.WPF\DSI.WPF.csproj">
+      <Project>{f0d43fc7-d794-4237-8942-9948edbd688c}</Project>
+      <Name>DSI.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
