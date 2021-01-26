@@ -1,14 +1,16 @@
 ﻿<themes:MetroShellWindow
     xmlns:themes="clr-namespace:DSI.WPF;assembly=DSI.WPF"
-    x:Class="DSI.ModuleA.MainWindow"
+    x:Class="DSI.ModuleA.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:DSI.ModuleA"
+    xmlns:local="clr-namespace:DSI.ModuleA.Views"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
-    Title="MainWindow" Height="450" Width="800">
+    Title="Module A" Height="450" HorizontalAlignment="Center" Width="800">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="{Binding Text}" />
     </Grid>
 </themes:MetroShellWindow>

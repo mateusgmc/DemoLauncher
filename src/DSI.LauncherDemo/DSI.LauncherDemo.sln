@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSI.Domain.Services", "Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSI.Domain.Models", "Domain\DSI.Domain.Models\DSI.Domain.Models.csproj", "{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSI.Core", "DSI.Core\DSI.Core.csproj", "{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

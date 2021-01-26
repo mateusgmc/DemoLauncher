@@ -1,4 +1,7 @@
 ﻿using DryIoc;
+using DSI.Domain.Services;
+using DSI.ModuleA.ViewModels;
+using DSI.ModuleA.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -25,6 +28,8 @@ namespace DSI.ModuleA
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // TODO: Registro de serviços e navegação aqui
+            containerRegistry.Register<IDataService, DataService>();
+            containerRegistry.RegisterForNavigation<MainWindow, MainViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

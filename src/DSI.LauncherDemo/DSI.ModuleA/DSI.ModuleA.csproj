@@ -83,18 +83,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -124,6 +124,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\DSI.Domain.Models\DSI.Domain.Models.csproj">
+      <Project>{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}</Project>
+      <Name>DSI.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\DSI.Domain.Services\DSI.Domain.Services.csproj">
+      <Project>{545D80A0-614B-481E-A97E-C9C12B8A4554}</Project>
+      <Name>DSI.Domain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSI.Core\DSI.Core.csproj">
+      <Project>{2A0BCCFB-2435-446B-8538-3DC1B774BCFD}</Project>
+      <Name>DSI.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DSI.WPF\DSI.WPF.csproj">
       <Project>{f0d43fc7-d794-4237-8942-9948edbd688c}</Project>
       <Name>DSI.WPF</Name>
