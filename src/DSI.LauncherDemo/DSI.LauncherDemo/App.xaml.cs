@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using DSI.LauncherDemo.Services;
 using DSI.LauncherDemo.ViewModels;
 using DSI.LauncherDemo.Views;
 using Prism.DryIoc;
@@ -27,6 +28,7 @@ namespace DSI.LauncherDemo
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // TODO: Registro de serviços e navegação aqui
+            containerRegistry.Register<IModuleServices, ModuleServices>();
             containerRegistry.RegisterForNavigation<MainWindow, MainViewModel>();
         }
 
