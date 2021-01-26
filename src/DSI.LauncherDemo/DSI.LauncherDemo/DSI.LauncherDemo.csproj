@@ -123,5 +123,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSI.ModuleA\DSI.ModuleA.csproj">
+      <Project>{a8bde16b-9816-42be-925c-60140b1ec90b}</Project>
+      <Name>DSI.ModuleA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSI.ModuleB\DSI.ModuleB.csproj">
+      <Project>{270a3b98-375e-4c10-b666-e2f9da0f60ad}</Project>
+      <Name>DSI.ModuleB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSI.WPF\DSI.WPF.csproj">
+      <Project>{f0d43fc7-d794-4237-8942-9948edbd688c}</Project>
+      <Name>DSI.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\DSI.SubmoduleA\DSI.SubmoduleA.csproj">
+      <Project>{e7eac978-34cc-4c19-92b5-9fc3698dde44}</Project>
+      <Name>DSI.SubmoduleA</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
