@@ -7,10 +7,82 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:DSI.LauncherDemo.Views"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
     Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Opção 1">
+                <MenuItem Header="Subopção 1" />
+                <MenuItem Header="Subopção 2" />
+            </MenuItem>
+            <MenuItem Header="Opção 2">
+                <MenuItem Header="Subopção 1" />
+                <MenuItem Header="Subopção 2" />
+                <MenuItem Header="Mais opções">
+                    <MenuItem Header="Subopção 1" />
+                    <MenuItem Header="Subopção 2" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Opção 3" />
+            <MenuItem Header="Etc" />
+        </Menu>
+
+        <ItemsControl Grid.Row="1" Margin="5" FocusVisualStyle="{x:Null}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <mah:Tile
+                Margin="5"
+                Width="200"
+                Title="Modulo A"
+                Command="{Binding OpenModuleACommand}"
+                mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                Background="#3498db"
+                HorizontalTitleAlignment="Right">
+                <iconPacks:PackIconModern Width="40" Height="40" Kind="Box" />
+            </mah:Tile>
+
+            <mah:Tile
+                Margin="5"
+                Width="200"
+                Title="Modulo B"
+                Command="{Binding OpenModuleBCommand}"
+                mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                Background="#ff9f43"
+                HorizontalTitleAlignment="Right">
+                <iconPacks:PackIconModern Width="40" Height="40" Kind="Box" />
+            </mah:Tile>
+
+            <mah:Tile
+                Margin="5"
+                Width="200"
+                Title="Modulo C"
+                mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                Background="#2ecc71"
+                HorizontalTitleAlignment="Right">
+                <iconPacks:PackIconModern Width="40" Height="40" Kind="Box" />
+            </mah:Tile>
+
+            <mah:Tile
+                Margin="5"
+                Width="200"
+                Title="Configurações"
+                mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                Background="#7f8fa6"
+                HorizontalTitleAlignment="Right">
+                <iconPacks:PackIconModern Width="40" Height="40" Kind="Settings" />
+            </mah:Tile>
+        </ItemsControl>
     </Grid>
 </themes:MetroShellWindow>

@@ -2,6 +2,8 @@
 using DSI.LauncherDemo.Services;
 using Prism.Commands;
 using Prism.Mvvm;
+using System;
+using System.Windows;
 
 namespace DSI.LauncherDemo.ViewModels
 {
@@ -13,17 +15,24 @@ namespace DSI.LauncherDemo.ViewModels
         {
             ModuleServices = moduleServices;
 
-            OpenModuleA = new DelegateCommand(OpenModuleAExecute);
-            OpenModuleB = new DelegateCommand(OpenModuleBExecute);
+            OpenModuleACommand = new DelegateCommand(OpenModuleAExecute);
+            OpenModuleBCommand = new DelegateCommand(OpenModuleBExecute);
         }
 
-        public DelegateCommand OpenModuleA { get; }
-        public DelegateCommand OpenModuleB { get; }
+        public DelegateCommand OpenModuleACommand { get; }
+        public DelegateCommand OpenModuleBCommand { get; }
 
         private void OpenModule(string path)
         {
-            var module = new Module(path);
-            ModuleServices.OpenModule(module);
+            try
+            {
+                var module = new Module(path);
+                ModuleServices.OpenModule(module);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OpenModuleAExecute() { OpenModule(ModulePath.ModuleA); }
