@@ -11,7 +11,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
-    Title="MainWindow" Height="450" Width="800">
+    Title="Launcher" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
