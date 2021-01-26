@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using DSI.LauncherDemo.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
