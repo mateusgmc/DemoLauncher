@@ -134,6 +134,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\DSI.Domain.Models\DSI.Domain.Models.csproj">
+      <Project>{A3287FF1-B074-4B7C-A4EC-33D92AD1793A}</Project>
+      <Name>DSI.Domain.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DSI.ModuleA\DSI.ModuleA.csproj">
       <Project>{a8bde16b-9816-42be-925c-60140b1ec90b}</Project>
       <Name>DSI.ModuleA</Name>

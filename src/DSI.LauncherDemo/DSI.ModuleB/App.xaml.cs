@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using DSI.Domain.Models;
 using DSI.Domain.Services;
 using DSI.ModuleB.ViewModels;
 using DSI.ModuleB.Views;
@@ -21,7 +22,6 @@ namespace DSI.ModuleB
     /// </summary>
     public partial class App : PrismApplication
     {
-        private static readonly string _appGuid = "ModuleBMutex";
         private static Mutex _mutex;
 
         protected override Window CreateShell()
@@ -31,20 +31,33 @@ namespace DSI.ModuleB
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _mutex = new Mutex(false, _appGuid);
+            var args = e.Args;
+            if (!args.Any() || !string.Equals(args.First(), AppToken.AccessKey))
+            {
+                MessageBox.Show("Acesso negado!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                Application.Current.Shutdown();
+                return;
+            }
+
+            _mutex = new Mutex(false, AppToken.ModuleB);
             bool acquired = _mutex.WaitOne(1000);
             if (!acquired)
             {
-                MessageBox.Show("Já existe uma instância dessa aplicação aberta.");
+                MessageBox.Show("Já existe uma instância dessa aplicação aberta.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 Application.Current.Shutdown();
+                return;
             }
+
             base.OnStartup(e);
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
-            _mutex.ReleaseMutex();
-            _mutex.Dispose();
+            if(_mutex != null)
+            {
+                _mutex.ReleaseMutex();
+                _mutex.Dispose();
+            }
             base.OnExit(e);
         }
 

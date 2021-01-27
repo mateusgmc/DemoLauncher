@@ -1,4 +1,5 @@
-﻿using DSI.LauncherDemo.Models;
+﻿using DSI.Domain.Models;
+using DSI.LauncherDemo.Models;
 using System.Diagnostics;
 
 namespace DSI.LauncherDemo.Services
@@ -7,7 +8,7 @@ namespace DSI.LauncherDemo.Services
     {
         public void OpenModule(Module module)
         {
-            using (Process.Start(module.Path))
+            using (Process.Start(module.Path, AppToken.AccessKey))
             {
             }
         }

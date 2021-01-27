@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using DSI.Domain.Models;
 using DSI.Domain.Services;
 using DSI.ModuleA.ViewModels;
 using DSI.ModuleA.Views;
@@ -23,6 +24,19 @@ namespace DSI.ModuleA
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var args = e.Args;
+            if (!args.Any() || !string.Equals(args.First(), AppToken.AccessKey))
+            {
+                MessageBox.Show("Acesso negado!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                Application.Current.Shutdown();
+                return;
+            }
+
+            base.OnStartup(e);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
